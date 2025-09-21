@@ -53,3 +53,31 @@ You can customize durations and behavior with query parameters:
 | `volume`      | float   | `volume=0.5`     | Chime volume (0.0 → 1.0)                   |
 
 **Example:**  
+
+https://yourusername.github.io/pomodoro/?focus=50&shortBreak=10&longBreak=30&autoStart=1&chime=1&volume=0.3
+
+
+---
+
+## 🛠️ Project Structure
+/
+├── index.html
+├── css/
+│ └── style.css
+├── js/
+│ └── app.js
+└── README.md
+
+
+---
+
+## 🔮 Roadmap
+- OBS hotkey integration (via `obs-websocket`)
+- More visual themes
+- Sound selection for chime
+
+---
+
+## 📜 License
+MIT License © 2025
+
