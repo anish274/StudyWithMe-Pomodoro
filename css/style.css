@@ -1,51 +1,104 @@
-/* Reset some defaults */
+/* ========== GLOBAL RESET ========== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  background: transparent; /* Needed for OBS overlay */
+html, body {
+  height: 100%;
+  width: 100%;
+  background: transparent; /* for OBS overlay */
+  font-size: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  font-family: Arial, sans-serif;
 }
 
-/* Container styling */
-.pomodoro-container {
-  background: rgba(255, 255, 255, 0.2); /* semi-transparent for visibility */
-  padding: 20px;
+/* ========== ROOT CONTAINER ========== */
+.pom-container {
+  padding: 12px 18px;
   border-radius: 12px;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ========== SHAPE VARIANTS ========== */
+.pom-container.square .main-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pom-container.rectangle .main-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ========== TEXT AND TIMER ========== */
+.custom-text {
+  font-size: 1rem;
+  margin-bottom: 8px;
   text-align: center;
-  min-width: 200px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
 }
 
-/* Timer styling */
+.state-label {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
 .timer {
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: bold;
-  color: black;
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
-  margin-bottom: 15px;
+  line-height: 1.2;
+  text-align: center;
+  margin: 4px 0;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 
-/* Button styling */
-.controls button {
-  font-size: 1.2rem;
-  margin: 0 8px;
-  padding: 8px 12px;
+/* ========== CONTROLS ========== */
+.controls {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ctrl-btn {
   border: none;
-  border-radius: 8px;
-  background: #f0f0f0;
+  padding: 6px 10px;
+  border-radius: 6px;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  transition: background 0.2s ease;
+  font-size: 0.9rem;
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  transition: background 0.2s;
 }
 
-.controls button:hover {
-  background: #e0e0e0;
+.ctrl-btn:hover {
+  background: rgba(240,240,240,0.9);
 }
+
+/* ========== SESSION COUNTER ========== */
+.session-counter {
+  font-size: 0.8rem;
+  opacity: 0.6;
+  margin-top: 4px;
+}
+
+/* ========== HINT (optional) ========== */
+.hint {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  opacity: 0.5;
+  text-align: center;
+}
+
+/* ========== FONT FAMILIES (1–9) ========== */
+.font-1
