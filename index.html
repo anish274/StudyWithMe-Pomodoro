@@ -1,20 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pomodoro for StudyWithMe</title>
-  <link rel="stylesheet" href="css/style.css"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pomodoro — StudyWithMe</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="pomodoro-container">
-    <div class="timer" id="timer">25:00</div>
-    <div class="controls">
-      <button id="start-pause">▶️</button>
-      <button id="reset">🔄</button>
-      <button id="mute-toggle">🔔</button>
+  <!-- Root container: classes updated dynamically (shape, colors, font) -->
+  <div id="pom-root" class="pom-container" role="application" aria-label="Pomodoro timer widget">
+    <!-- Optional custom text (above timer for square, left for rectangle) -->
+    <div id="customText" class="custom-text" aria-hidden="false"></div>
+
+    <!-- Timer / layout wrapper -->
+    <div class="main-row" id="mainRow">
+      <!-- Timer display -->
+      <div class="timer-wrap">
+        <div id="stateLabel" class="state-label" aria-live="polite">Focus</div>
+        <div id="timer" class="timer" role="timer" aria-live="off">25:00</div>
+      </div>
+
+      <!-- Optional small session counter -->
+      <div id="sessionCounter" class="session-counter" aria-hidden="true">1/4</div>
+
+      <!-- Controls (may be hidden via params) -->
+      <div id="controls" class="controls">
+        <button id="playPauseBtn" class="ctrl-btn" title="Play / Pause">Play</button>
+        <button id="nextBtn" class="ctrl-btn" title="Skip to next">Next</button>
+        <button id="resetBtn" class="ctrl-btn" title="Reset">Reset</button>
+        <button id="chimeBtn" class="ctrl-btn" title="Toggle chime">Chime: On</button>
+      </div>
     </div>
+
+    <!-- Hint (only visible when opened in browser directly) -->
+    <div id="hint" class="hint">Space = Play/Pause · R = Reset · M = Mute · Use OBS → Browser Source → Interact</div>
   </div>
+
   <script src="js/app.js"></script>
 </body>
 </html>
